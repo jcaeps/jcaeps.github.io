@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="本山快乐营赵四街舞专题页，汇集赵四（刘小光）在《本山快乐营》中的经典搞笑街舞视频、舞台瞬间、模仿教学及幕后花絮，回顾赵四最耀眼的舞蹈时刻。">
+    <meta name="keywords" content="本山快乐营,赵四,刘小光,赵四街舞,赵四跳舞,本山快乐营经典片段,赵四搞笑">
+    <title>本山快乐营赵四街舞-经典搞笑舞蹈瞬间与幕后花絮</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #fbc02d;
+            --dark-bg: #1a1a1a;
+            --card-bg: #2c2c2c;
+            --text-main: #ffffff;
+            --text-sub: #b0b0b0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-unit);
+            padding-bottom: var(--spacing-unit);
+            border-bottom: 2px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 2rem;
+            background-color: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 8px 12px;
+            color: #fff;
+            outline: none;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            border: none;
+            padding: 0 12px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/tvs4dance/1600/600') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: #000;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(251, 192, 45, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: #000;
+        }
+
+        /* Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Video Cards */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+            border: 1px solid #333;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .thumbnail {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .video-card:hover .thumbnail img {
+            opacity: 1;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
+
+        .play-icon::after {
+            content: '';
+            border-style: solid;
+            border-width: 8px 0 8px 14px;
+            border-color: transparent transparent transparent #fff;
+            margin-left: 4px;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tag {
+            background-color: rgba(211, 47, 47, 0.2);
+            color: var(--primary-color);
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-size: 0.75rem;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .rank-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            width: 25px;
+            text-align: center;
+        }
+
+        .rank-number.top-3 {
+            color: #ff5252;
+        }
+
+        .rank-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .rank-info span {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* Character Profile */
+        .character-profile {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--secondary-color);
+            object-fit: cover;
+        }
+
+        .profile-text h3 {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .profile-text p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* Analysis Section */
+        .analysis-section {
+            background-color: #252525;
+            padding: 40px 0;
+            margin-bottom: 60px;
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .analysis-item {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .analysis-item h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .analysis-item p {
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            background-color: #333;
+        }
+
+        .faq-question:hover {
+            background-color: #3a3a3a;
+        }
+
+        .faq-answer {
+            padding: 0 20px 15px;
+            color: var(--text-sub);
+            display: none;
+            border-top: 1px solid #444;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 40px 0 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-sub);
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .search-box {
+                display: none; /* Hide search on mobile for simplicity */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>📺</span> 本山快乐营
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">经典片段</a></li>
+                    <li><a href="#">人物档案</a></li>
+                    <li><a href="#">幕后花絮</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索视频...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>本山快乐营赵四街舞</h1>
+                <p>重温刘小光饰演的“赵四”那些令人捧腹的“魔性”舞蹈瞬间，感受东北喜剧的独特魅力。</p>
+                <div>
+                    <a href="#videos" class="btn">观看视频</a>
+                    <a href="#analysis" class="btn btn-outline">风格解析</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="container main-grid">
+            
+            <!-- Left Column: Video Content -->
+            <section id="videos">
+                <div class="section-title">热门赵四街舞集锦</div>
+                <div class="video-grid">
+                    <!-- Video Card 1 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/dance1/400/225" alt="赵四街舞视频封面">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">赵四魔性舞步挑战全网，这节奏根本停不下来！</h3>
+                            <div class="card-meta">
+                                <span>2023-10-15</span>
+                                <span class="tag">热门</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 2 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/dance2/400/225" alt="赵四街舞视频封面">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">本山快乐营现场：赵四单挑全场，舞姿狂野</h3>
+                            <div class="card-meta">
+                                <span>2023-09-28</span>
+                                <span class="tag">现场</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 3 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/dance3/400/225" alt="赵四街舞视频封面">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">模仿教学：如何像赵四一样甩头？</h3>
+                            <div class="card-meta">
+                                <span>2023-10-02</span>
+                                <span class="tag">教学</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 4 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/dance4/400/225" alt="赵四街舞视频封面">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">赵四与刘能广场舞Battle，笑翻全场</h3>
+                            <div class="card-meta">
+                                <span>2023-08-15</span>
+                                <span class="tag">喜剧</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Right Column: Sidebar -->
+            <aside>
+                <!-- Character Profile -->
+                <div class="sidebar-widget">
+                    <div class="section-title" style="font-size: 1.5rem; border-color: var(--primary-color);">角色档案</div>
+                    <div class="character-profile">
+                        <img src="https://picsum.photos/seed/liuxiaoguang/150/150" alt="刘小光照片" class="avatar">
+                        <div class="profile-text">
+                            <h3>赵四 (刘小光 饰)</h3>
+                            <p>本山快乐营核心人物，以“四哥”自居。性格豪爽、爱面子，常因过于自信或反应迟钝而闹出笑话。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ranking List -->
+                <div class="sidebar-widget">
+                    <div class="section-title" style="font-size: 1.5rem; border-color: var(--primary-color);">街舞名场面 Top 5</div>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-number top-3">1</span>
+                            <div class="rank-info">
+                                <h4>那一夜，我喝醉了（经典甩头）</h4>
+                                <span>播放量 500w+</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-number top-3">2</span>
+                            <div class="rank-info">
+                                <h4>广场舞争霸赛冠军</h4>
+                                <span>播放量 300w+</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-number top-3">3</span>
+                            <div class="rank-info">
+                                <h4>模仿迈克尔杰克逊</h4>
+                                <span>播放量 200w+</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-number">4</span>
+                            <div class="rank-info">
+                                <h4>醉酒后的即兴舞蹈</h4>
+                                <span>播放量 150w+</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-number">5</span>
+                            <div class="rank-info">
+                                <h4>与于月仙的摇摆舞</h4>
+                                <span>播放量 120w+</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="sidebar-widget" style="text-align: center; color: #666; font-size: 0.9rem;">
+                    广告位：本山传媒官方周边
+                </div>
+            </aside>
+        </div>
+
+        <!-- Analysis Section -->
+        <section id="analysis" class="analysis-section">
+            <div class="container">
+                <div class="section-title">赵四街舞风格解析</div>
+                <div class="analysis-grid">
+                    <div class="analysis-item">
+                        <h3>🤸‍♂️ 独特的“东北Rap”节奏</h3>
+                        <p>赵四的舞蹈并非标准的街舞动作，而是将东北二人转的节奏感与街舞元素结合，形成了独特的“魔性”律动，听感上非常洗脑。</p>
+                    </div>
+                    <div class="analysis-item">
+                        <h3>😂 夸张的面部表情管理</h3>
+                        <p>舞蹈的精髓在于表情。赵四标志性的瞪眼、咧嘴笑以及突如其来的定格，极大地增强了喜剧效果，让观众在欢笑中记住动作。</p>
+                    </div>
+                    <div class="analysis-item">
+                        <h3>💃 自信爆棚的“四哥”气场</h3>
+                        <p>无论动作是否专业，赵四始终保持着一种“我是全场最靓的仔”的自信，这种反差萌是角色魅力的核心来源。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container faq-section">
+            <div class="section-title">常见问题 (FAQ)</div>
+            
+            <div class="faq-item">
+                <div class="faq-question">赵四的扮演者是谁？</div>
+                <div class="faq-answer">
+                    赵四由著名演员刘小光饰演。他在《乡村爱情》系列及《本山快乐营》中凭借该角色广受欢迎。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">赵四的街舞动作是编导设计的吗？</div>
+                <div class="faq-answer">
+                    赵四的街舞风格更多是刘小光个人表演习惯与团队喜剧效果的结合，经过多次舞台磨合后形成了一套固定的“赵四式”舞蹈语言。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">在哪里可以看完整的本山快乐营节目？</div>
+                <div class="faq-answer">
+                    建议关注“本山传媒”的官方社交媒体账号或正版视频平台的相关专区，以获取最新和最完整的剧集资源。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系合作</a>
+            </div>
+            <p class="copyright">
+                &copy; 2023 本山快乐营粉丝站. 本页面为非官方粉丝制作，仅供娱乐与交流使用。<br>
+                相关商标归本山传媒及原作者所有。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好看的爱情电影-精选浪漫佳片与观影指南</title>
+    <meta name="description" content="本站汇集全网高分好看的爱情电影资源，涵盖经典老片、近年热门及小众佳作。提供详细剧情介绍、角色分析及观影指南，助您轻松找到心仪的爱情故事。">
+    <meta name="keywords" content="好看的爱情电影,浪漫电影,爱情片推荐,经典爱情电影">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --secondary-color: #6f42c1;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-secondary: #6c757d;
+            --border-radius: 8px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/romance/1920/600') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(214, 51, 132, 0.4);
+        }
+
+        /* 分类标签 */
+        .categories {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            overflow-x: auto;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .cat-tag {
+            padding: 6px 16px;
+            background-color: var(--card-bg);
+            border: 1px solid #e9ecef;
+            border-radius: 20px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cat-tag.active, .cat-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* 核心推荐区 */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-lg);
+            border-left: 5px solid var(--primary-color);
+            padding-left: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .movie-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-poster {
+            position: relative;
+            width: 100%;
+            padding-top: 140%; /* 电影海报比例 */
+            overflow: hidden;
+        }
+
+        .card-poster img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .movie-card:hover .card-poster img {
+            transform: scale(1.05);
+        }
+
+        .card-rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffc107;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-bottom: var(--spacing-md);
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f3f5;
+            padding-top: var(--spacing-sm);
+        }
+
+        .card-genre {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            background-color: #f8f9fa;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* 特色榜单 */
+        .feature-section {
+            background-color: #fff;
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--spacing-lg);
+        }
+
+        .rank-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .rank-item {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+            padding: var(--spacing-md);
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .rank-item:hover {
+            background-color: #e9ecef;
+        }
+
+        .rank-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #dee2e6;
+            width: 40px;
+            text-align: center;
+        }
+
+        .rank-num.top-3 {
+            color: var(--primary-color);
+        }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .rank-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* 观影指南/FAQ */
+        .guide-section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .guide-card {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .guide-card h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+
+        .guide-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #212529;
+            color: #adb5bd;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #343a40;
+            padding-top: var(--spacing-md);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* 简化移动端，实际项目可做汉堡菜单 */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .movie-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-md);
+            }
+            .rank-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>💕</span> 浪漫影库
+            </a>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#hot">热门推荐</a>
+                <a href="#rank">高分榜单</a>
+                <a href="#guide">观影指南</a>
+                <a href="#">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>好看的爱情电影</h1>
+            <p>穿越时光的经典，直击心灵的感动。探索那些让人落泪、让人微笑的银幕爱情故事。</p>
+            <button class="btn" onclick="document.getElementById('hot').scrollIntoView({behavior: 'smooth'})">开始探索</button>
+        </div>
+    </section>
+
+    <!-- 分类筛选 -->
+    <div class="container">
+        <div class="categories">
+            <div class="cat-tag active">全部</div>
+            <div class="cat-tag">经典老片</div>
+            <div class="cat-tag">治愈系</div>
+            <div class="cat-tag">虐恋催泪</div>
+            <div class="cat-tag">喜剧爱情</div>
+            <div class="cat-tag">文艺片</div>
+            <div class="cat-tag">国产爱情</div>
+            <div class="cat-tag">欧美爱情</div>
+        </div>
+    </div>
+
+    <!-- 热门推荐 -->
+    <section id="hot" class="container">
+        <div class="section-title">
+            <h2>本周热门推荐</h2>
+            <a href="#" style="font-size: 0.9rem; color: var(--primary-color);">查看更多 &rarr;</a>
+        </div>
+
+        <div class="movie-grid">
+            <!-- 电影卡片 1 -->
+            <article class="movie-card">
+                <div class="card-poster">
+                    <img src="https://picsum.photos/seed/romance1/300/420" alt="泰坦尼克号海报">
+                    <div class="card-rating">
+                        <span>★</span> 9.5
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">泰坦尼克号</h3>
+                    <div class="card-meta">1997 | 美国 | 剧情 / 爱情</div>
+                    <p class="card-desc">跨越阶级的史诗爱情，杰克与露丝在沉船之夜许下的永恒誓言。</p>
+                    <div class="card-footer">
+                        <span class="card-genre">史诗</span>
+                        <button class="btn" style="padding: 6px 12px; font-size: 0.85rem;">详情</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 电影卡片 2 -->
+            <article class="movie-card">
+                <div class="card-poster">
+                    <img src="https://picsum.photos/seed/romance2/300/420" alt="爱在三部曲海报">
+                    <div class="card-rating">
+                        <span>★</span> 9.2
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">爱在日落黄昏时</h3>
+                    <div class="card-meta">2004 | 法国/美国 | 爱情 / 剧情</div>
+                    <p class="card-desc">九年后的巴黎重逢，两个旧爱在咖啡馆里的对话，温暖而细腻。</p>
+                    <div class="card-footer">
+                        <span class="card-genre">文艺</span>
+                        <button class="btn" style="padding: 6px 12px; font-size: 0.85rem;">详情</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 电影卡片 3 -->
+            <article class="movie-card">
+                <div class="card-poster">
+                    <img src="https://picsum.photos/seed/romance3/300/420" alt="情书海报">
+                    <div class="card-rating">
+                        <span>★</span> 9.0
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">情书</h3>
+                    <div class="card-meta">1995 | 日本 | 爱情 / 剧情</div>
+                    <p class="card-desc">借书卡引发的往事，一个关于暗恋、思念与释怀的凄美故事。</p>
+                    <div class="card-footer">
+                        <span class="card-genre">日系</span>
+                        <button class="btn" style="padding: 6px 12px; font-size: 0.85rem;">详情</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 电影卡片 4 -->
+            <article class="movie-card">
+                <div class="card-poster">
+                    <img src="https://picsum.photos/seed/romance4/300/420" alt="时空恋旅人海报">
+                    <div class="card-rating">
+                        <span>★</span> 8.8
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">时空恋旅人</h3>
+                    <div class="card-meta">2013 | 英国 | 奇幻 / 爱情</div>
+                    <p class="card-desc">拥有穿越时空能力的男主，最终明白爱的真谛是珍惜当下的每一天。</p>
+                    <div class="card-footer">
+                        <span class="card-genre">奇幻</span>
+                        <button class="btn" style="padding: 6px 12px; font-size: 0.85rem;">详情</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 高分榜单 -->
+    <section id="rank" class="feature-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>年度高分爱情片 Top 5</h2>
+            </div>
+            <div class="rank-list">
+                <div class="rank-item">
+                    <div class="rank-num top-3">1</div>
+                    <div class="rank-info">
+                        <h3>爱乐之城</h3>
+                        <p>2016 · 美国 · 歌舞 / 爱情</p>
+                    </div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num top-3">2</div>
+                    <div class="rank-info">
+                        <h3>初恋这件小事</h3>
+                        <p>2010 · 泰国 / 校园 / 爱情</p>
+                    </div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num top-3">3</div>
+                    <div class="rank-info">
+                        <h3>怦然心动</h3>
+                        <p>2010 · 美国 / 青春 / 爱情</p>
+                    </div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num">4</div>
+                    <div class="rank-info">
+                        <h3>罗马假日</h3>
+                        <p>1953 · 美国 / 经典 / 爱情</p>
+                    </div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num">5</div>
+                    <div class="rank-info">
+                        <h3>时空恋旅人</h3>
+                        <p>2013 · 英国 / 奇幻 / 爱情</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 观影指南 -->
+    <section id="guide" class="guide-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>挑选好看爱情电影的指南</h2>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>1. 确定心情基调</h3>
+                    <p>是想看轻松搞笑的喜剧爱情，还是想体验痛彻心扉的虐恋？明确当下的情感需求，能更快找到合适的影片。</p>
+                </div>
+                <div class="guide-card">
+                    <h3>2. 关注导演与风格</h3>
+                    <p>王家卫的镜头语言细腻迷离，诺兰的叙事结构宏大复杂。了解导演风格有助于判断影片是否符合你的口味。</p>
+                </div>
+                <div class="guide-card">
+                    <h3>3. 查看口碑与评分</h3>
+                    <p>参考豆瓣、IMDb等平台的评分和长评，重点关注观众的关于剧情逻辑和角色塑造的反馈。</p>
+                </div>
+                <div class="guide-card">
+                    <h3>4. 考虑观影场景</h3>
+                    <p>与恋人约会适合浪漫经典，独自观影适合治愈系，聚会时则适合轻松爆米花爱情片。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>浪漫影库</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">致力于为影迷提供最全面、最精准的爱情电影推荐与资讯服务。在这里，每一帧画面都值得被铭记。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">经典老片</a></li>
+                        <li><a href="#">国产爱情</a></li>
+                        <li><a href="#">欧美爱情</a></li>
+                        <li><a href="#">日韩爱情</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 浪漫影库 版权所有. 本站所有资源仅供学习交流使用.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

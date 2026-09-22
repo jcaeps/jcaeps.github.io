@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picacg官网下载-二次元漫画阅读与社区平台</title>
+    <meta name="description" content="Picacg官网下载提供海量二次元漫画资源，涵盖日韩、国产、欧美等多种类型。支持在线阅读与离线下载，界面清爽，功能强大，是二次元爱好者的首选社区平台。">
+    <meta name="keywords" content="Picacg官网下载,二次元漫画,在线阅读,漫画社区,动漫资源">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff5e5e;
+            --primary-hover: #e04848;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 94, 94, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f0 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-options {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .download-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            width: 300px;
+            transition: transform 0.2s;
+        }
+
+        .download-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            height: 42px; /* fixed height for alignment */
+        }
+
+        .card-features {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .card-features li {
+            margin-bottom: 6px;
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        /* Manga Grid */
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .manga-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+            position: relative;
+        }
+
+        .manga-item:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .manga-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .manga-info {
+            padding: 12px;
+        }
+
+        .manga-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .manga-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            color: var(--text-secondary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        /* Features Section */
+        .features-section {
+            background-color: var(--card-bg);
+            padding: 40px 0;
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            padding: 60px 0;
+        }
+
+        .guide-box {
+            background: linear-gradient(to right, #fff5f5, #fff);
+            border: 1px solid #ffe0e0;
+            border-radius: var(--border-radius);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guide-step {
+            display: flex;
+            gap: 16px;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 12px;
+            border: 1px solid #eee;
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--primary-color);
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            display: none;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2b2b;
+            color: #ccc;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .download-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .download-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#ff5e5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#ff5e5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#ff5e5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Picacg</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">漫画库</a>
+                <a href="#">排行榜</a>
+                <a href="#">社区</a>
+                <a href="#">下载中心</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Picacg官网下载 - 发现你的二次元世界</h1>
+                <p>海量正版漫画资源，高清画质，极速阅读体验。无论你是喜欢日韩漫画、国产轻小说还是同人创作，Picacg 都能满足你对二次元的一切想象。</p>
+                <div class="download-options">
+                    <div class="download-card">
+                        <div class="card-icon">📱</div>
+                        <h3 class="card-title">安卓版下载</h3>
+                        <p class="card-desc">适配主流安卓机型，支持手势翻页与夜间模式，随时随地畅读。</p>
+                        <ul class="card-features">
+                            <li>✓ 全网最全漫画库</li>
+                            <li>✓ 离线缓存功能</li>
+                            <li>✓ 会员专属特权</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%">立即下载</button>
+                    </div>
+                    <div class="download-card">
+                        <div class="card-icon">💻</div>
+                        <h3 class="card-title">PC客户端</h3>
+                        <p class="card-desc">专为电脑端优化，大屏阅读更舒适，支持批量导入本地漫画。</p>
+                        <ul class="card-features">
+                            <li>✓ 丝滑流畅体验</li>
+                            <li>✓ 多窗口多标签</li>
+                            <li>✓ 本地管理工具</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%">立即下载</button>
+                    </div>
+                    <div class="download-card">
+                        <div class="card-icon">🌐</div>
+                        <h3 class="card-title">网页版</h3>
+                        <p class="card-desc">无需安装，浏览器直接访问，极速加载，兼容所有主流浏览器。</p>
+                        <ul class="card-features">
+                            <li>✓ 随时随地打开</li>
+                            <li>✓ 简洁纯净界面</li>
+                            <li>✓ 自动保存进度</li>
+                        </ul>
+                        <button class="btn btn-outline" style="width: 100%">访问官网</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">📚</div>
+                        <h3>资源丰富</h3>
+                        <p>收录超过十万部漫画作品，涵盖日漫、国漫、韩漫等热门题材。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3>极速更新</h3>
+                        <p>第一时间同步最新章节，追更不等待，热门作品更新零延迟。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3>高清画质</h3>
+                        <p>支持高清原图加载，细节纤毫毕现，带来影院级的视觉享受。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <h3>安全稳定</h3>
+                        <p>官方直供下载渠道，无广告插件，保护您的设备安全。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="main-content">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">热门推荐</h2>
+                    <a href="#" class="section-more">查看更多 &rarr;</a>
+                </div>
+                <div class="manga-grid">
+                    <!-- Item 1 -->
+                    <article class="manga-item">
+                        <img src="https://picsum.photos/seed/manga1/200/300" alt="漫画封面" class="manga-cover">
+                        <div class="manga-info">
+                            <h3 class="manga-title">星际战纪：觉醒</h3>
+                            <div class="manga-meta">
+                                <span class="tag">科幻</span>
+                                <span>连载中</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 2 -->
+                    <article class="manga-item">
+                        <img src="https://picsum.photos/seed/manga2/200/300" alt="漫画封面" class="manga-cover">
+                        <div class="manga-info">
+                            <h3 class="manga-title">都市异闻录</h3>
+                            <div class="manga-meta">
+                                <span class="tag">悬疑</span>
+                                <span>已完结</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 3 -->
+                    <article class="manga-item">
+                        <img src="https://picsum.photos/seed/manga3/200/300" alt="漫画封面" class="manga-cover">
+                        <div class="manga-info">
+                            <h3 class="manga-title">魔法学院物语</h3>
+                            <div class="manga-meta">
+                                <span class="tag">奇幻</span>
+                                <span>连载中</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 4 -->
+                    <article class="manga-item">
+                        <img src="https://picsum.photos/seed/manga4/200/300" alt="漫画封面" class="manga-cover">
+                        <div class="manga-info">
+                            <h3 class="manga-title">恋上坏天使</h3>
+                            <div class="manga-meta">
+                                <span class="tag">恋爱</span>
+                                <span>已完结</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 5 -->
+                    <article class="manga-item">
+                        <img src="https://picsum.photos/seed/manga5/200/300" alt="漫画封面" class="manga-cover">
+                        <div class="manga-info">
+                            <h3 class="manga-title">深海传说</h3>
+                            <div class="manga-meta">
+                                <span class="tag">冒险</span>
+                                <span>连载中</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 6 -->
+                    <article class="manga-item">
+                        <img src="https://picsum.photos/seed/manga6/200/300" alt="漫画封面" class="manga-cover">
+                        <div class="manga-info">
+                            <h3 class="manga-title">电竞之神</h3>
+                            <div class="manga-meta">
+                                <span class="tag">热血</span>
+                                <span>连载中</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 7 -->
+                    <article class="manga-item">
+                        <img src="https://picsum.photos/seed/manga7/200/300" alt="漫画封面" class="manga-cover">
+                        <div class="manga-info">
+                            <h3 class="manga-title">古代宫廷剧</h3>
+                            <div class="manga-meta">
+                                <span class="tag">古装</span>
+                                <span>连载中</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 8 -->
+                    <article class="manga-item">
+                        <img src="https://picsum.photos/seed/manga8/200/300" alt="漫画封面" class="manga-cover">
+                        <div class="manga-info">
+                            <h3 class="manga-title">末日生存指南</h3>
+                            <div class="manga-meta">
+                                <span class="tag">灾难</span>
+                                <span>连载中</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section class="guide-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">快速指南</h2>
+                </div>
+                <div class="guide-box">
+                    <div class="guide-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>访问官网</h4>
+                            <p>点击上方“立即下载”按钮，跳转到官方下载页面。请确保网络连接正常，避免下载中断。</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>选择版本</h4>
+                            <p>根据您的设备类型选择对应的安装包。安卓用户下载APK文件，电脑用户下载安装包。</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>安装与登录</h4>
+                            <p>下载完成后，打开安装包进行安装。首次登录可以使用手机号或邮箱注册账号，绑定设备即可畅享会员服务。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Picacg官网下载需要收费吗？</div>
+                    <div class="faq-answer">Picacg 客户端免费下载，基础阅读功能完全开放。部分独家连载或高清专区可能需要开通会员服务。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">下载的漫画可以离线观看吗？</div>
+                    <div class="faq-answer">可以。在阅读页面点击“缓存”或“下载”按钮，您可以将喜欢的章节保存到本地，在无网络环境下也能随时观看。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何保证下载的安全性？</div>
+                    <div class="faq-answer">本站所有资源均由官方提供，所有安装包均经过安全扫描，无病毒、无木马，请放心下载使用。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持哪些操作系统？</div>
+                    <div class="faq-answer">目前支持 Android 5.0 及以上版本，以及 Windows 7/10/11 系统。iOS 用户可以直接使用网页版访问。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>Picacg</h2>
+                    <p>致力于为二次元爱好者提供最优质的漫画阅读服务。在这里，你可以找到所有的热爱与感动。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>帮助中心</h3>
+                    <ul>
+                        <li><a href="#">下载指南</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">设备兼容</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关注我们</h3>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">QQ群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Picacg. All Rights Reserved. 仅供学习交流使用，请支持正版。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+                          </html>

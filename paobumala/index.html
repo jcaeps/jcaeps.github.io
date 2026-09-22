@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="跑步马拉松营养膳食指南：提供专业运动员级碳水、蛋白质与水分补充策略，赛前中后程饮食计划及常见误区解析。">
+    <meta name="keywords" content="跑步马拉松营养膳食, 马拉松补给, 跑步饮食, 赛前饮食, 长跑营养">
+    <title>跑步马拉松营养膳食-科学补给与能量管理指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c7a7b;
+            --secondary-color: #38b2ac;
+            --accent-color: #ecc94b;
+            --text-dark: #1a202c;
+            --text-gray: #4a5568;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c7a7b 0%, #319795 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Core Principles */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .principle-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: #e6fffa;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .principle-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .principle-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Timeline/Race Day Plan */
+        .plan-section {
+            background-color: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #e2e8f0;
+            z-index: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 45%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+            text-align: right;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            border-right: 4px solid var(--accent-color);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 0 2px #e2e8f0;
+        }
+
+        .timeline-time {
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Food Guide */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .food-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .food-card:hover {
+            transform: scale(1.02);
+        }
+
+        .food-img-placeholder {
+            height: 180px;
+            background-color: #edf2f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0aec0;
+            font-size: 3rem;
+        }
+
+        .food-info {
+            padding: 1.5rem;
+        }
+
+        .food-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .food-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .nutrition-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nutrition-tag {
+            font-size: 0.75rem;
+            background-color: #f0fff4;
+            color: #276749;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.2s;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-gray);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a202c;
+            color: #cbd5e0;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #2d3748;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 40px;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                text-align: left !important;
+                border-left: 4px solid var(--accent-color) !important;
+                border-right: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                <span>跑者补给站</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#principles" class="active">核心原则</a></li>
+                    <li><a href="#plan">赛程计划</a></li>
+                    <li><a href="#foods">推荐食物</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#plan" class="cta-btn">查看饮食计划</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>跑步马拉松营养膳食<br>科学补给指南</h1>
+                <p>马拉松不仅是体能的较量，更是代谢系统的考验。通过科学的碳水补充、水分管理和电解质平衡，让你的每一次配速都更有保障。</p>
+                <div class="hero-tags">
+                    <span class="tag">碳水负荷</span>
+                    <span class="tag">电解质</span>
+                    <span class="tag">赛前备赛</span>
+                    <span class="tag">赛后恢复</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Principles -->
+        <section id="principles" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>科学补给三大原则</h2>
+                    <p>根据运动强度与时长，精准调整营养摄入策略</p>
+                </div>
+                <div class="principles-grid">
+                    <article class="principle-card">
+                        <div class="icon-box">⚡</div>
+                        <h3>碳水优先</h3>
+                        <p>马拉松运动主要依赖糖原供能。训练及赛前应确保充足的碳水化合物摄入（约占每日总热量的50%-60%），以最大化肌肉糖原储备，延缓疲劳感。</p>
+                    </article>
+                    <article class="principle-card">
+                        <div class="icon-box">💧</div>
+                        <h3>水分与电解质</h3>
+                        <p>大量出汗会导致钠、钾等电解质流失。单纯喝水可能稀释血液中的钠浓度，引发低钠血症。建议使用运动饮料或补充电解质片，保持体液平衡。</p>
+                    </article>
+                    <article class="principle-card">
+                        <div class="icon-box">🥩</div>
+                        <h3>蛋白质修复</h3>
+                        <p>长距离跑后的肌肉微损伤需要修复。运动后30分钟内补充优质蛋白质（如乳清蛋白、鸡蛋、鱼肉），配合碳水化合物，能促进肌肉合成与糖原再填充。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Race Day Plan -->
+        <section id="plan" class="section plan-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>马拉松赛程膳食计划</h2>
+                    <p>从赛前一周到终点线，分阶段管理你的能量</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">赛前 3-4 天</span>
+                            <h3>碳水负荷期</h3>
+                            <p>逐渐增加碳水化合物的比例，减少高纤维和脂肪摄入，确保肠胃适应高碳水饮食模式。多吃燕麦、米饭、土豆。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">赛前 1 天</span>
+                            <h3>清淡饮食与睡眠</h3>
+                            <p>晚餐以易消化的碳水化合物为主（如面条），避免高纤维蔬菜、油腻肉类和乳制品，预防赛中肠胃不适。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">赛前 2-3 小时</span>
+                            <h3>赛前正餐</h3>
+                            <p>摄入约 300-500 卡路里的易消化食物（如香蕉、白面包涂抹果酱）。避免高纤维、高脂肪和含糖量过高的食物。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">赛中补给</span>
+                            <h3>持续碳水摄入</h3>
+                            <p>每 45-60 分钟补充 30-60 克碳水化合物（能量胶、运动饮料）。少量多次饮水，避免一次大量饮水导致胃部不适。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-time">赛后 30 分钟</span>
+                            <h3>黄金恢复窗口</h3>
+                            <p>立即补充碳水化合物和蛋白质的混合物。例如：一杯运动饮料 + 一个蛋白粉摇摇杯，快速启动肌肉修复。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Foods -->
+        <section id="foods" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>推荐能量食物清单</h2>
+                    <p>易于携带且高效供能的日常饮食选择</p>
+                </div>
+                <div class="food-grid">
+                    <article class="food-card">
+                        <div class="food-img-placeholder">🍌</div>
+                        <div class="food-info">
+                            <h3>香蕉</h3>
+                            <p>天然的快速供能食物，富含钾元素，能有效预防肌肉痉挛，且易于消化。</p>
+                            <div class="nutrition-tags">
+                                <span class="nutrition-tag">钾</span>
+                                <span class="nutrition-tag">快速碳水</span>
+                                <span class="nutrition-tag">易消化</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="food-card">
+                        <div class="food-img-placeholder">🥯</div>
+                        <div class="food-info">
+                            <h3>全麦面包/能量棒</h3>
+                            <p>提供稳定的血糖释放，是赛前加餐和路跑补给的首选，方便携带。</p>
+                            <div class="nutrition-tags">
+                                <span class="nutrition-tag">复合碳水</span>
+                                <span class="nutrition-tag">便携</span>
+                                <span class="nutrition-tag">能量胶替代</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="food-card">
+                        <div class="food-img-placeholder">🥚</div>
+                        <div class="food-info">
+                            <h3>水煮蛋/蛋白粉</h3>
+                            <p>优质蛋白来源，帮助运动后肌肉修复，且脂肪含量低，不会增加肠胃负担。</p>
+                            <div class="nutrition-tags">
+                                <span class="nutrition-tag">优质蛋白</span>
+                                <span class="nutrition-tag">低脂</span>
+                                <span class="nutrition-tag">肌肉修复</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="food-card">
+                        <div class="food-img-placeholder">💧</div>
+                        <div class="food-info">
+                            <h3>运动饮料</h3>
+                            <p>含有钠、钾等电解质和糖分，能同时补充流失的水分和能量，防止抽筋。</p>
+                            <div class="nutrition-tags">
+                                <span class="nutrition-tag">电解质</span>
+                                <span class="nutrition-tag">水分</span>
+                                <span class="nutrition-tag">能量</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于跑步马拉松营养膳食的疑问与建议</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">跑步时可以喝咖啡吗？</button>
+                        <div class="faq-answer">
+                            <p>对于大多数跑者来说，适量饮用咖啡（约 200-300mg 咖啡因）可能有助于提升警觉性和脂肪燃烧，但过量可能导致脱水或肠胃不适。建议根据个人耐受度调整，并确保充分补水。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">比赛当天应该空腹跑吗？</button>
+                        <div class="faq-answer">
+                            <p>不建议完全空腹跑。经过一夜睡眠，体内糖原储备较低。赛前吃少量易消化的碳水化合物（如一片面包或一根香蕉）可以提升表现，但不要吃得太饱，以免跑步时发生胃痛。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">如何判断自己需要补充电解质？</button>
+                        <div class="faq-answer">
+                            <p>如果你在长时间（超过1小时）的户外运动中大量出汗，且尿液颜色变深或出现头晕、无力等症状，说明可能需要补充电解质。对于短距离（小于1小时）的慢跑，清水通常足够。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">赛后应该吃什么来恢复？</button>
+                        <div class="faq-answer">
+                            <p>遵循“碳水+蛋白质”的原则。例如：米饭/面条 + 鸡胸肉/鱼肉/蛋白粉。这种组合能最快地补充肝糖原并修复受损肌肉纤维。同时，充足的睡眠是恢复的关键。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p>致力于为跑者提供科学、实用的马拉松营养膳食指导，帮助跑者突破极限，享受跑步乐趣。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#principles">核心原则</a></li>
+                        <li><a href="#plan">膳食计划</a></li>
+                        <li><a href="#foods">推荐食物</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>免责声明</h4>
+                    <p style="font-size: 0.9rem;">本站内容仅供参考，不构成医疗建议。如有特殊健康状况，请咨询专业医生或营养师。</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 跑者补给站 - 跑步马拉松营养膳食指南
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion Logic
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other answers
+                    faqQuestions.forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.style.maxHeight = null;
+                    });
+
+                    // Toggle current answer
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // Smooth Scroll for Navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倾耳倾听-心灵共鸣与深度沟通指南</title>
+    <meta name="description" content="倾耳倾听是一个专注于情感交流、心理疏导与深度沟通的在线平台。我们提供倾听技巧、情感咨询及倾听者互助指南，帮助您在喧嚣世界中找回内心的宁静与理解。">
+    <meta name="keywords" content="倾耳倾听, 情感咨询, 深度沟通, 心理疏导, 倾听技巧, 情感共鸣">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5D737E;
+            --secondary-color: #8FA4B0;
+            --accent-color: #E6B89C;
+            --bg-color: #F9F9F9;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 12px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #4A5F68;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(93, 115, 126, 0.9), rgba(143, 164, 176, 0.8)), 
+                        url('https://picsum.photos/seed/whisper/1920/1080') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Listening Guide Section */
+        .guide-section {
+            padding: 5rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .guide-image img {
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .guide-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .guide-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .step-list {
+            margin-top: 2rem;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            background-color: var(--accent-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .step-text h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .step-text p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Interactive Zone */
+        .interactive-zone {
+            padding: 5rem 0;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+
+        .interactive-zone h2 {
+            margin-bottom: 1rem;
+        }
+
+        .interactive-zone p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C3E50;
+            color: #ecf0f1;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .guide-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <span>👂</span> 倾耳倾听
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#features">核心价值</a></li>
+                    <li><a href="#guide">倾听指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+                <a href="#start" class="btn btn-primary">开始倾诉</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>倾耳倾听，听见内心的声音</h1>
+                <p>在这个喧嚣的世界里，我们愿意成为您最忠实的听众。提供专业的情感支持与深度沟通指南，助您化解孤独，重建连接。</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#guide" class="btn btn-primary">学习倾听技巧</a>
+                    <a href="#contact" class="btn btn-outline" style="border-color: white; color: white;">预约咨询</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">为什么我们需要倾耳倾听？</h2>
+                <p class="section-subtitle">倾听不仅仅是听见声音，更是理解与共情的开始。它能够拉近人与人之间的距离，消除误解与隔阂。</p>
+                
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>情绪释放</h3>
+                        <p>提供一个安全、无评判的空间，让您自由地表达内心的焦虑、压力或喜悦，获得情绪的出口。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>深度共情</h3>
+                        <p>通过专业的倾听技巧，帮助您和对方感受到被理解，建立更深层次的情感连接。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>视角转换</h3>
+                        <p>在倾听他人的故事中，往往能找到解决自身困扰的灵感，跳出思维定式。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🌱</div>
+                        <h3>关系修复</h3>
+                        <p>许多人际冲突源于缺乏倾听。学会倾听是修复关系、化解矛盾的第一步。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <div class="guide-grid">
+                    <div class="guide-content">
+                        <h2>掌握“倾耳倾听”的三个核心步骤</h2>
+                        <p>真正的倾听是一种主动的参与。它要求我们将注意力完全集中在对方身上，放下预设的判断和急于回应的冲动。以下是建立有效倾听习惯的关键方法：</p>
+                        
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <h4>全神贯注</h4>
+                                    <p>放下手机，保持眼神交流，身体微微前倾。这传达出“我正在听”的强烈信号。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <h4>复述确认</h4>
+                                    <p>使用“您的意思是……”或“您感到……是因为……”等句式，确认你准确理解了对方的情感和观点。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <h4>开放式提问</h4>
+                                    <p>多问“为什么”和“怎么做”，鼓励对方多说，而不是用“是”或“不是”来终结话题。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-image">
+                        <img src="https://picsum.photos/seed/listening/600/400" alt="两个人在安静的环境中交谈">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Zone -->
+        <section class="interactive-zone">
+            <div class="container">
+                <h2>加入我们的倾听社区</h2>
+                <p>无论您是想要寻找一个树洞，还是希望成为一名专业的倾听者，这里都有属于您的位置。</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#" class="btn btn-primary" style="background-color: white; color: var(--primary-color);">成为倾听者</a>
+                    <a href="#" class="btn btn-outline" style="border-color: white; color: white;">寻找倾听对象</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">关于倾听的常见问题</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>倾听者和心理咨询师有什么区别？</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>倾听者主要提供情感支持和陪伴，侧重于情绪的宣泄和共鸣；而心理咨询师则侧重于通过专业理论帮助来访者解决深层心理问题或行为模式。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>我担心我的倾诉会被评判或泄露？</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>我们严格遵循保密原则。所有的对话内容仅限于倾听者和倾诉者之间，除非涉及自伤、伤人或法律规定的特殊例外情况，否则不会向第三方透露。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>如何成为一个好的倾听者？</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>成为一个好的倾听者首先需要接纳和耐心。不要急于给建议，也不要试图立刻“修复”对方的问题。专注于理解对方的感受，保持同理心即可。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>👂 倾耳倾听</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.8;">
+                        我们致力于构建一个温暖、包容的倾听网络。在这里，每一个声音都值得被听见，每一份情感都值得被尊重。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#guide">倾听指南</a></li>
+                        <li><a href="#features">服务介绍</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：support@qingertingting.com</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：温暖市心灵大道101号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 倾耳倾听平台 版权所有. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

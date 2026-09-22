@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蜜桃圈 - 成熟社交与兴趣交友平台。在这里，发现志同道合的伙伴，分享生活点滴，拓展优质社交圈。">
+    <meta name="keywords" content="蜜桃圈, 成熟交友, 社交平台, 兴趣圈层, 情感交流">
+    <title>蜜桃圈-成熟社交与兴趣交友平台</title>
+    <style>
+        :root {
+            --primary-color: #ff7eb3;
+            --primary-dark: #e05a8f;
+            --secondary-color: #7afcff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #f9f9f9;
+            --bg-card: #ffffff;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.08);
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-dark);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 126, 179, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 126, 179, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(120deg, #fff0f5 0%, #ffe6f2 100%);
+            padding: 80px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,126,179,0.1) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #fff0f5, #ffe6f2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-dark);
+            font-size: 28px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Categories Section */
+        .categories {
+            background-color: #fff;
+            padding: 80px 20px;
+        }
+
+        .cat-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cat-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cat-tag {
+            padding: 12px 30px;
+            background: #f4f4f4;
+            border-radius: 50px;
+            color: var(--text-main);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 15px;
+        }
+
+        .cat-tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Community Section */
+        .community {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .community-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .feed-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feed-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feed-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #eee;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .user-info h4 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .user-info span {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .feed-content p {
+            margin-bottom: 15px;
+            color: var(--text-main);
+            font-size: 15px;
+        }
+
+        .feed-tags {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .topic-list li {
+            margin-bottom: 12px;
+        }
+
+        .topic-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-main);
+            font-size: 14px;
+        }
+
+        .topic-list a:hover {
+            color: var(--primary-dark);
+        }
+
+        .topic-count {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 15px;
+            }
+
+            nav {
+                display: none; /* Simplified for static demo */
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .community-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo"><span>🍑</span>蜜桃圈</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">兴趣圈</a></li>
+                    <li><a href="#">热门动态</a></li>
+                    <li><a href="#">社区公约</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>发现真实自我，<br>遇见<span class="highlight">同频</span>的伙伴</h1>
+                <p>蜜桃圈是一个专注于成熟社交与兴趣交流的社区。在这里，没有繁杂的干扰，只有真实的对话与志同道合的朋友。</p>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                    <a href="#" class="btn btn-primary">立即加入</a>
+                    <a href="#" class="btn btn-outline">浏览社区</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100W+</span>
+                        <span class="stat-label">注册用户</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">活跃圈子</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">实时互动</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="section-title">
+                <h2>为什么选择蜜桃圈</h2>
+                <p>我们致力于打造一个纯粹、安全、高效的社交环境</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon-box">🔒</div>
+                    <h3>实名认证体系</h3>
+                    <p>严格的身份审核机制，确保每一位用户都是真实存在的个体，构建可信的社交基础。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">🎯</div>
+                    <h3>兴趣精准匹配</h3>
+                    <p>基于大数据标签，帮你快速找到拥有共同爱好、生活态度和价值观的“灵魂伴侣”。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">💬</div>
+                    <h3>多元交流方式</h3>
+                    <p>支持图文、语音、视频等多种形式，满足不同场景下的表达与沟通需求。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="cat-container">
+                <div class="section-title">
+                    <h2>热门兴趣圈层</h2>
+                </div>
+                <div class="cat-list">
+                    <a href="#" class="cat-tag">成熟情感</a>
+                    <a href="#" class="cat-tag">都市夜生活</a>
+                    <a href="#" class="cat-tag">户外探险</a>
+                    <a href="#" class="cat-tag">音乐发烧友</a>
+                    <a href="#" class="cat-tag">美食美酒</a>
+                    <a href="#" class="cat-tag">摄影艺术</a>
+                    <a href="#" class="cat-tag">游戏竞技</a>
+                    <a href="#" class="cat-tag">职场交流</a>
+                    <a href="#" class="cat-tag">旅行日记</a>
+                    <a href="#" class="cat-tag">兴趣爱好</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="community">
+            <div class="section-title">
+                <h2>社区精选动态</h2>
+            </div>
+            <div class="community-layout">
+                <div class="feed-list">
+                    <article class="feed-card">
+                        <div class="feed-header">
+                            <img src="https://picsum.photos/seed/user1/100/100" alt="用户头像" class="avatar">
+                            <div class="user-info">
+                                <h4>林先生 32岁</h4>
+                                <span>发布于 · 2小时前</span>
+                            </div>
+                        </div>
+                        <div class="feed-content">
+                            <p>周末终于有空去爬山了，空气真好。这次尝试了新的路线，风景绝美，推荐给喜欢户外的朋友们。📷 #户外 #周末去哪儿</p>
+                        </div>
+                        <div class="feed-tags">
+                            <span class="tag">#户外运动</span>
+                            <span class="tag">#周末生活</span>
+                        </div>
+                    </article>
+
+                    <article class="feed-card">
+                        <div class="feed-header">
+                            <img src="https://picsum.photos/seed/user2/100/100" alt="用户头像" class="avatar">
+                            <div class="user-info">
+                                <h4>小雅 28岁</h4>
+                                <span>发布于 · 5小时前</span>
+                            </div>
+                        </div>
+                        <div class="feed-content">
+                            <p>最近在研究红酒品鉴，有没有同样喜欢红酒的小伙伴一起交流一下？或者推荐一些入门级的红酒品牌？🍷</p>
+                        </div>
+                        <div class="feed-tags">
+                            <span class="tag">#美食美酒</span>
+                            <span class="tag">#红酒</span>
+                        </div>
+                    </article>
+
+                    <article class="feed-card">
+                        <div class="feed-header">
+                            <img src="https://picsum.photos/seed/user3/100/100" alt="用户头像" class="avatar">
+                            <div class="user-info">
+                                <h4>阿杰 35岁</h4>
+                                <span>发布于 · 1天前</span>
+                            </div>
+                        </div>
+                        <div class="feed-content">
+                            <p>在这个快节奏的城市里，能找到一个可以安静聊天的地方真的不容易。蜜桃圈让我认识了几个很聊得来的朋友，感觉生活都丰富了不少。👍</p>
+                        </div>
+                        <div class="feed-tags">
+                            <span class="tag">#交友</span>
+                            <span class="tag">#生活感悟</span>
+                        </div>
+                    </article>
+                </div>
+
+                <aside>
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">热门话题</h3>
+                        <ul class="topic-list">
+                            <li><a href="#">周末聚会去哪玩？ <span class="topic-count">2.3k</span></a></li>
+                            <li><a href="#">如何开启一段真诚的对话 <span class="topic-count">1.8k</span></a></li>
+                            <li><a href="#">分享你最喜欢的城市角落 <span class="topic-count">956</span></a></li>
+                            <li><a href="#">关于成熟社交的看法 <span class="topic-count">890</span></a></li>
+                            <li><a href="#">摄影技巧交流 <span class="topic-count">720</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">新人必读</h3>
+                        <ul class="topic-list">
+                            <li><a href="#">社区行为规范</a></li>
+                            <li><a href="#">如何完善个人资料</a></li>
+                            <li><a href="#">防诈骗指南</a></li>
+                            <li><a href="#">寻找兴趣圈的方法</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>关于蜜桃圈</h4>
+                <p style="font-size: 14px; line-height: 1.8;">蜜桃圈是一个致力于提供真实、健康、丰富社交体验的平台。我们相信，真诚的交流是建立人际关系的基础。</p>
+            </div>
+            <div class="footer-col">
+                <h4>探索</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">联系客服</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助</h4>
+                <ul>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">账号安全</a></li>
+                    <li><a href="#">举报中心</a></li>
+                    <li><a href="#">用户协议</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 蜜桃圈 Maitaoquan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>

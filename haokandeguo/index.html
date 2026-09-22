@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="好看国产电影推荐与在线观看指南，收录最新高分国产影片、经典老片及年度票房佳作，提供剧情简介、影评评分及观影攻略。">
+    <meta name="keywords" content="好看的国产电影,国产电影推荐,高分国产片,在线观看">
+    <title>好看的国产电影-最新高分国产影片推荐与观影指南</title>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --primary-hover: #b20710;
+            --bg-color: #141414;
+            --card-bg: #1f1f1f;
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(0, 0, 0, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .search-box {
+            display: flex;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            border: none;
+            padding: 8px 12px;
+            background: transparent;
+            color: #fff;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #333;
+            color: #fff;
+            padding: 0 12px;
+            cursor: pointer;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to top, var(--bg-color) 10%, transparent 90%), url('https://picsum.photos/seed/cinema/1920/600') no-repeat center center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #fff;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* 通用 Section */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 32px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* 电影卡片网格 */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .movie-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .poster-wrapper {
+            position: relative;
+            padding-top: 150%; /* 2:3 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .poster-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .movie-card:hover .poster-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .rating-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.8);
+            color: #ffd700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .movie-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 特色推荐区域 */
+        .featured-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        .featured-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            min-height: 300px;
+        }
+
+        .featured-poster {
+            width: 40%;
+            background-color: #333;
+        }
+
+        .featured-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-title {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .featured-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        /* 分类导航 */
+        .categories-nav {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .cat-btn {
+            padding: 10px 20px;
+            background: var(--card-bg);
+            border: 1px solid #333;
+            color: var(--text-secondary);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* 影评列表 */
+        .review-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-item {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .review-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #333;
+            flex-shrink: 0;
+        }
+
+        .review-content h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .review-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .reviewer-name {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background-color: var(--card-bg);
+            margin-bottom: 12px;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 16px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid #333;
+            padding-top: 16px;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #000;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .featured-layout {
+                grid-template-columns: 1fr;
+            }
+            .featured-poster {
+                width: 100%;
+                height: 200px;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 16px;
+            }
+            nav ul {
+                gap: 16px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">光影<span>指南</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新上映</a></li>
+                    <li><a href="#">高分榜单</a></li>
+                    <li><a href="#">经典回顾</a></li>
+                    <li><a href="#">影评专区</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索电影、导演...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-tag">年度重磅推荐</span>
+                <h1>流浪地球2：重启未来</h1>
+                <p>人类面临前所未有的危机，太阳急速老化膨胀，为了延续文明，地球开启流浪之旅。硬核科幻巨制，视觉特效震撼，探讨生存与希望的主题。</p>
+                <div>
+                    <button class="btn">立即观看</button>
+                    <button class="btn btn-outline">加入片单</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分类筛选 -->
+        <section class="container">
+            <div class="categories-nav">
+                <button class="cat-btn active">全部</button>
+                <button class="cat-btn">悬疑犯罪</button>
+                <button class="cat-btn">爱情剧情</button>
+                <button class="cat-btn">历史传记</button>
+                <button class="cat-btn">科幻动作</button>
+                <button class="cat-btn">文艺短片</button>
+            </div>
+        </section>
+
+        <!-- 热门国产电影 -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门国产电影</h2>
+                <a href="#" class="section-more">查看全部 &rarr;</a>
+            </div>
+            <div class="movie-grid">
+                <!-- 电影卡片 1 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie1/300/450" alt="电影海报">
+                        <div class="rating-badge">
+                            <span>★</span> 9.2
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">长安三万里</h3>
+                        <div class="movie-meta">
+                            <span>2023</span>
+                            <span>2小时24分</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 电影卡片 2 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie2/300/450" alt="电影海报">
+                        <div class="rating-badge">
+                            <span>★</span> 8.8
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">满江红</h3>
+                        <div class="movie-meta">
+                            <span>2023</span>
+                            <span>2小时29分</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 电影卡片 3 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie3/300/450" alt="电影海报">
+                        <div class="rating-badge">
+                            <span>★</span> 8.5
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">封神第一部</h3>
+                        <div class="movie-meta">
+                            <span>2023</span>
+                            <span>2小时24分</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 电影卡片 4 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie4/300/450" alt="电影海报">
+                        <div class="rating-badge">
+                            <span>★</span> 9.0
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">八角笼中</h3>
+                        <div class="movie-meta">
+                            <span>2023</span>
+                            <span>2小时16分</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 电影卡片 5 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie5/300/450" alt="电影海报">
+                        <div class="rating-badge">
+                            <span>★</span> 8.3
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">坚如磐石</h3>
+                        <div class="movie-meta">
+                            <span>2023</span>
+                            <span>2小时44分</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 电影卡片 6 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/movie6/300/450" alt="电影海报">
+                        <div class="rating-badge">
+                            <span>★</span> 8.7
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">宇宙探索编辑部</h3>
+                        <div class="movie-meta">
+                            <span>2023</span>
+                            <span>1小时52分</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 重点推荐与评论 -->
+        <section class="container">
+            <div class="featured-layout">
+                <!-- 重点推荐 -->
+                <div class="featured-section">
+                    <div class="section-header">
+                        <h2 class="section-title">本周特别推荐</h2>
+                    </div>
+                    <article class="featured-card">
+                        <div class="featured-poster">
+                            <img src="https://picsum.photos/seed/featured/600/400" alt="特别推荐海报">
+                        </div>
+                        <div class="featured-content">
+                            <div class="tags">
+                                <span class="tag">科幻</span>
+                                <span class="tag">灾难</span>
+                                <span class="tag">家庭</span>
+                            </div>
+                            <h3 class="featured-title">流浪地球2</h3>
+                            <p class="featured-desc">在太阳即将毁灭的末日危机下，中国航天员刘培强与数字生命计划展开了一场关乎人类存亡的宏大博弈。影片不仅在视觉特效上达到了国际顶尖水准，更深刻探讨了人工智能伦理与人类情感之间的冲突。</p>
+                            <button class="btn">查看详情</button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 影评精选 -->
+                <div class="review-section">
+                    <div class="section-header">
+                        <h2 class="section-title">观众热评</h2>
+                    </div>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <div class="review-avatar">
+                                <img src="https://picsum.photos/seed/u1/100/100" style="width:100%;height:100%;border-radius:50%;" alt="用户头像">
+                            </div>
+                            <div class="review-content">
+                                <h4>电影爱好者小王</h4>
+                                <p>国产科幻终于有了一部能拿得出手的大片，特效真的太炸裂了！</p>
+                                <span class="reviewer-name">2023-10-15</span>
+                            </div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-avatar">
+                                <img src="https://picsum.photos/seed/u2/100/100" style="width:100%;height:100%;border-radius:50%;" alt="用户头像">
+                            </div>
+                            <div class="review-content">
+                                <h4>文艺青年</h4>
+                                <p>《长安三万里》虽然是动画，但那种唐诗的浪漫感真的让人泪目。</p>
+                                <span class="reviewer-name">2023-10-12</span>
+                            </div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-avatar">
+                                <img src="https://picsum.photos/seed/u3/100/100" style="width:100%;height:100%;border-radius:50%;" alt="用户头像">
+                            </div>
+                            <div class="review-content">
+                                <h4>悬疑迷</h4>
+                                <p>满江红的结构设计非常巧妙，反转一个接一个，全程无尿点。</p>
+                                <span class="reviewer-name">2023-10-10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ 常见问题 -->
+        <section class="container faq-container">
+            <div class="section-header">
+                <h2 class="section-title">观影指南与常见问题</h2>
+            </div>
+            <details>
+                <summary>在哪里可以观看好看的国产电影？</summary>
+                <div class="faq-content">
+                    目前国内主流的在线视频平台（如腾讯视频、爱奇艺、优酷、哔哩哔哩电影）以及各大影院均可观看最新上映的国产电影。部分经典老片在视频网站上有版权收录。
+                </div>
+            </details>
+            <details>
+                <summary>如何判断一部国产电影是否值得观看？</summary>
+                <div class="faq-content">
+                    除了参考豆瓣、IMDb等评分平台的分数外，建议查看电影的导演过往作品、主演阵容以及影评人的专业评价。此外，了解电影的类型和拍摄背景也能帮助您更好地判断是否符合个人口味。
+                </div>
+            </details>
+            <details>
+                <summary>国产电影有哪些著名的奖项？</summary>
+                <div class="faq-content">
+                    国内最具影响力的奖项包括“金鸡奖”、“百花奖”和“华表奖”，统称为中国电影三大奖。此外，戛纳、柏林、威尼斯三大国际电影节也是中国电影走向世界的重要舞台。
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于光影指南</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.8;">
+                        光影指南致力于为影迷提供最新、最全的国产电影资讯、影评推荐及观影攻略。我们专注于发掘优质内容，陪伴您的每一场电影之旅。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>热门分类</h3>
+                    <ul>
+                        <li><a href="#">动作片</a></li>
+                        <li><a href="#">喜剧片</a></li>
+                        <li><a href="#">爱情片</a></li>
+                        <li><a href="#">科幻片</a></li>
+                        <li><a href="#">纪录片</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>帮助中心</h3>
+                    <ul>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">广告合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关注我们</h3>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">豆瓣小组</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 光影指南 - 好看的国产电影推荐平台. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
